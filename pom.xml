@@ -12,7 +12,7 @@
 	<artifactId>PetStoreService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PetStoreService</name>
-	<description>Example projet for Java &amp; React developpment cources</description>
+	<description>Example project for Java &amp; React development sources</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
@@ -32,6 +32,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 	</dependencies>
 
 	<build>
