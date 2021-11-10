@@ -1,4 +1,4 @@
-package com.ibagroup.petstore.model;
+package com.ibagroup.petstore.dto.demo;
 
 public class TestMessage {
 

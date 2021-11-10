@@ -1,6 +1,8 @@
-package com.ibagroup.petstore.controller;
+package com.ibagroup.petstore.controller.demo;
 
-import com.ibagroup.petstore.model.TestMessage;
+import com.ibagroup.petstore.dto.demo.TestMessage;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -15,11 +17,18 @@ public class DemoController {
     public long id = 2;
 
     public DemoController() {
-        this.list.add(new TestMessage(1, "Message text", "Alex"));
+        this.list.add(new TestMessage(1, "TestMessage text", "Alex"));
     }
 
     @GetMapping("/all-messages")
-    public List<TestMessage> getSimpleMessage(@RequestParam(required = false) Long id) {
+    @ApiOperation(value = "Returns list of messages",
+        notes = "Some notes (f.e. database tables which are used behind)",
+        response = TestMessage.class)
+    public List<TestMessage> getSimpleMessage(
+        @ApiParam(value = "Id of the message",
+            required = true,
+            example = "1")
+        @RequestParam Long id) {
         return id != null
                 ? list.stream().filter(item -> item.getId() < id).collect(Collectors.toList())
                 : list;
